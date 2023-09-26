@@ -1,0 +1,51 @@
+{% extends 'main/base.html' %}
+
+{% block content %}
+
+<style>
+    main {
+        display: flex;
+        justify-content: center;
+    }
+ 
+    .info {
+        margin-top: 30px;
+        border: 2px solid black;
+        border-radius: 50px;
+        background-color: white;
+        box-shadow: 3px 3px 15px black;
+        padding: 20px;
+        max-width: 600px;
+        text-align: center;
+        font-size: 18px;
+        line-height: 30px;
+    }
+ 
+    .info h2 {
+        font-size: 24px;
+        color:rgb(13, 13, 65);
+        margin-bottom: 20px;
+    }
+
+ </style>
+ 
+ <main>
+     <div class="info">
+        <h2>Welcome to the Advanced Gram-Schmidt Calculator!</h2>
+         
+        <p>During my computer science degree studies, I've encountered numerous questions regarding the Gram-Schmidt process with various types of inner products.</p>
+        
+        <p>After realizing that existing calculators across the web only support the standard inner product,
+             I set out to create a tool to assist others in a similar position.</p> 
+        
+        <p>This calculator is designed to be a learning aid, helping you verify your work rather than replacing it entirely.</p>
+         
+        <p>Feel free to explore the versatility of this tool by choosing your preferred inner product.</p>
+        <p>Remember, true learning comes from understanding the process, not just getting the answer.</p>
+         <br>
+        <p>Explore and enjoy!</p>
+     </div>
+ </main>
+
+   
+{% endblock %} 

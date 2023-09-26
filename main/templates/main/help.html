@@ -1,0 +1,62 @@
+{% extends 'main/base.html' %}
+
+{% block content %}
+
+<style>
+
+   .info{
+        display: flex;
+        border: 1px solid black;
+        flex-direction: column;
+        font-size: larger;
+        padding:30px;
+        margin:30px;
+        width: 900px;
+        gap: 20px;
+    }
+    main {
+        display: flex;
+        justify-content: center;
+    }
+    .t1{
+        font-style: italic;
+        color: rgb(114, 114, 172);
+    }
+    .t2{
+        border-top: 1px solid black;
+    }
+    header{
+        margin-bottom: 30px;
+    }
+</style>
+
+<main>
+    <div class="info">
+
+        <header>If theres a problem make sure your base is <span class="t1">linearly independent</span> <br>and that you follow the rules for valid <span class="t1">inner product</span>:</header>
+
+        <div>
+            <strong>Positivity:</strong> ⟨v, v⟩ ≥ 0<br>
+            <small>For all vectors v in the vector space, the inner product ⟨v, v⟩ must be greater than or equal to zero.</small>
+        </div>
+
+        <div>
+            <strong>Definiteness:</strong> ⟨v, v⟩=0 if and only if  v=0<br>
+            <small>v is the zero vector.</small>
+        </div>
+
+        <div>
+            <strong>Linearity in the First Argument:</strong> ⟨a⋅u + b⋅v, w⟩ = a⋅⟨u, w⟩ + b⋅⟨v, w⟩<br>
+            <small>for any scalars a and b and vectors u, v.</small>
+        </div>
+
+        <div>
+            <strong>Conjugate Symmetry:</strong> ⟨u, v⟩ = <span class="t2">⟨v, u⟩</span><br>
+            <small>For complex vector spaces, the inner product must be conjugate symmetric.</small>
+        </div>
+
+    </div>
+</main>
+
+   
+{% endblock %} 
