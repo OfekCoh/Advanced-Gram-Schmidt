@@ -22,10 +22,10 @@ def home(response):
                 return HttpResponse('Something went wrong, check inner product or base')
             pretty_base(base)
             orth_base_json = json.dumps(orth_base)
-            return render(response,"main/Home.html",{'form':form , 'base':base, 'res':orth_base_json, 'sizeVector':sizeVector})
+            return render(response,"main/home.html",{'form':form , 'base':base, 'res':orth_base_json, 'sizeVector':sizeVector})
     else:
         form=HomeForm()
-    return render(response,"main/Home.html",{'form':form, 'base':None, 'res':None})
+    return render(response,"main/home.html",{'form':form, 'base':None, 'res':None})
 
 
 def about(response):
