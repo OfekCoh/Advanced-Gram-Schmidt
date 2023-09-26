@@ -26,6 +26,7 @@ SECRET_KEY = os.environ.get("SECRET_KEY")
 DEBUG = os.environ.get("DEBUG", "False").lower() == "true"
 
 ALLOWED_HOSTS = os.environ.get("ALLOWED_HOSTS").split(" ")
+PYTHON_VERSION = os.environ.get("PYTHON_VERSION")
 
 
 # Application definition
