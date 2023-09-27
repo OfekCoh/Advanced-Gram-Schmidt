@@ -2,33 +2,6 @@
 <html>
 <head>
     <style>
-
-body {
-    display: none;
-}
-
-.loader {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    height: 100vh;
-    background-color: #f8f8f8;
-}
-
-.spinner {
-    border: 4px solid rgba(255, 255, 255, 0.3);
-    border-top: 4px solid #000;
-    border-radius: 50%;
-    width: 40px;
-    height: 40px;
-    animation: spin 1s linear infinite;
-}
-
-@keyframes spin {
-    0% { transform: rotate(0deg); }
-    100% { transform: rotate(360deg); }
-}
-
          html, body{
             height: 120%;
         }
@@ -122,12 +95,6 @@ body {
 </head>
 
 <body>
-
-    <!-- loading screen -->
-    <div class="loader">
-        <div class="spinner"></div>
-    </div>
-    
     <nav class="sidenav">
         <a href="/">Home</a>
         <a href="/about/">About</a>
@@ -150,16 +117,5 @@ body {
     integrity="sha384-I7E8VVD/ismYTF4hNIPjVp/Zjvgyol6VFvRkX/vR+Vc4jQkC+hVqc2pM8ODewa9r" crossorigin="anonymous"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.min.js" 
     integrity="sha384-BBtl+eGJRgqQAUMxJ7pMwbEyER4l1g+O15P+16Ep7Q9Q+zqX6gSbd85u4mG4QzX+" crossorigin="anonymous"></script>
-
-    <script>
-           window.addEventListener('load', function() {
-            // When the page is fully loaded, hide the loader and show the content
-            const loader = document.querySelector('.loader');
-            const content = document.querySelector('body');
-
-            loader.style.display = 'none';
-            content.style.display = 'block';
-        });
-    </script>
 </body>
 </html>
