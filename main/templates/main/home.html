@@ -1,7 +1,7 @@
 {% extends 'main/base.html' %}
 
 {% block content %}
-    <Style>
+    <style>
         #calculate{   /* the submit button- calculate */
             color: rgb(255, 255, 255); 
             cursor: pointer;
@@ -73,7 +73,7 @@
             flex-direction: column;
             border: 2px solid lightblue;
             text-align: center;
-            width: 31vw;
+            /* width: 31vw; */
             max-width: 500px;
         }
         .second-row-inner{
@@ -128,7 +128,8 @@
 
         }
         .old-base{
-            font-size:16px;
+            font-size:0.8em;
+            max-width: 90%;
         }
         .vector{
             display: flex;
@@ -177,6 +178,7 @@
             font-size: 14px;
             visibility: hidden;
             width: 20vw;
+            min-width: 88px;
             background-color: rgb(214, 207, 202);
             color: #000000;
             border-radius: 6px;
@@ -220,7 +222,13 @@
                width: min-content;
             }
         }
-    </Style>
+
+        @media screen and (max-width: 400px){
+            .get-input{
+                font-weight: 400;
+            }
+        }
+    </style>
 
     <form method="post"> 
         {% csrf_token %}

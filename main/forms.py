@@ -42,7 +42,7 @@ class HomeForm(forms.Form):
     newInner=forms.CharField( max_length=50, 
                               label='Or enter new inner product',
                               required=False, 
-                              widget=forms.TextInput(attrs={'id':'newInner', 'size':'30',
+                              widget=forms.TextInput(attrs={'id':'newInner', 
                                                             'placeholder': '(Optional)', 
                                                             'readonly': True}))
     
