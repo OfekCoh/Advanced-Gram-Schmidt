@@ -48,7 +48,7 @@ class HomeForm(forms.Form):
     
     base = forms.CharField( max_length=50,
                             label='Enter your base',
-                            widget=forms.Textarea(attrs={'id':'base-input', 
+                            widget=forms.Textarea(attrs={'id':'base-input', 'inputmode': 'decimal',
                                                           'rows': 5, 
                                                           'cols': 20, 
                                                           'placeholder': ' -2   2   √(-3)/2\n -1   1   √(3/2)\n  2   0   1/√(3)'}))

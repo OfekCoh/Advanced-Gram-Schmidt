@@ -212,22 +212,38 @@
             left: 25px;   
             position: absolute;
             z-index: 2;
+            max-width: 269.89px;
         }
         .info2:hover .info2-text{
           visibility: visible;    
         }
 
-        @media screen and (max-width: 855px) {
+        @media screen and (max-width: 1300px){ /* info2 text moves up */
+            .info2-text{
+                top: -70px;   
+                width: 269.89px;   
+            }
+        }
+
+        @media screen and (min-width: 733px) and (max-width:835px){ /* info1 gets to the left */
+            .info-text{
+                left: -170px;
+            }
+        }
+
+        @media screen and (max-width: 733px){  /* first info moves to the left */
             .get-inner2 {
                width: min-content;
             }
         }
 
-        @media screen and (max-width: 400px){
+        @media screen and (max-width: 400px){  /* input not bold anymore */
             .get-input{
                 font-weight: 400;
             }
         }
+
+
     </style>
 
     <form method="post"> 
@@ -333,7 +349,7 @@
             {
                 input.setAttribute('disabled', 'disabled')
                 input.removeAttribute('required');
-                input.placeholder='Optional (uncheck above)'
+                input.placeholder='(Optional)'
                 buttons.style.display = 'none';
             }
             else 
