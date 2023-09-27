@@ -125,12 +125,23 @@
             background-color: white;
             box-shadow: 3px 3px 15px black;
             padding: 10px; /* 0.6510416667vw */
-
         }
         .old-base{
             font-size:0.8em;
             max-width: 90%;
         }
+
+        .for-scroll{
+            overflow-x: auto;
+            max-width: 97%;
+        }
+        
+        .base{
+            font-family: Times;
+            line-height: normal;
+            display: flex;
+        }
+
         .vector{
             display: flex;
             width: min-content;
@@ -141,27 +152,21 @@
             align-self: center;
             justify-self: center;
             align-items: center;
-            font-size: 27px;
-            gap: 2px;
-            margin-top: 14px;
+            font-size: 27px;   /* 1.755859375vw = 27px */
+            gap: 2px;  /* 0.390625vw = 2px */
+            margin-top: 14px;  /* 0.91015625vw = 14px */
             min-width:max-content;
         }
         .brac{
-            font-size: 120px; /* 7.8125vw */
-        }
-        .base{
-            font-family: Times;
-            line-height: normal;
-            display: flex;
-            width: min-content;
-        }
+            font-size: 120px; /* 7.8125vw  = 120px*/
+        } 
         .semi{
-            font-size: 50px; /* 3.255208333vw */
-            margin: 0 0 5px; /* 0.32552083vw */
+            font-size: 50px; /* 3.255208333vw  = 50px*/
+            margin: 0 0 5px; /* 0.32552083vw  = 5px*/
             align-self: end;
         }
         .wrap{
-            font-size: 130px;   /* 8.463541667vw; */
+            font-size: 130px;   /* 8.463541667vw = 130px */
         }
         .get-inner2{
             display:flex;
@@ -334,7 +339,9 @@
                 &#10101;
             </div>
             <div class="new-base">The orthogonal base:</div>
-            <div id="outputContainer" class="base"></div>
+            <div class="for-scroll">
+                <div id="outputContainer" class="base"></div>
+            </div>
         </div>
     {% endif %}
 
@@ -454,30 +461,43 @@
             const elements=document.querySelectorAll('.elements');
             elements.forEach(element => {
                 if (sizeVector == 1) {
-                    element.style.setProperty('font-size', '30px');  // 1.953125vw
+                    element.style.setProperty('font-size', '30px');  // 1.953125vw = 30px
                     element.style.setProperty('gap', '0'); // 0
-                    element.style.setProperty('margin-top', '5px'); // 0.32552083vw
+                    element.style.setProperty('margin-top', '5px'); // 0.32552083vw = 5px
                 }
                 else if (sizeVector == 2) {
-                    element.style.setProperty('font-size', '27px'); // 1.755859375vw
-                    element.style.setProperty('gap', '12px'); // 0.78125vw
-                    element.style.setProperty('margin-top', '13px'); // 0.84505208vw
+                    element.style.setProperty('font-size', '27px'); // 1.755859375vw = 27px
+                    element.style.setProperty('gap', '12px'); // 0.78125vw = 12px
+                    element.style.setProperty('margin-top', '13px'); // 0.84505208vw = 13px
                 }
                 else if (sizeVector == 3) {
-                    element.style.setProperty('font-size', '27px'); // 1.755859375vw
-                    element.style.setProperty('gap', '2px'); // 0.390625vw
-                    element.style.setProperty('margin-top', '14px'); // 0.91015625vw
+                    element.style.setProperty('font-size', '27px'); // 1.755859375vw = 27px
+                    element.style.setProperty('gap', '2px'); // 0.390625vw = 2px
+                    element.style.setProperty('margin-top', '14px'); // 0.91015625vw = 14px
                 }
                 else if (sizeVector == 4) {
-                    element.style.setProperty('font-size', '24px'); // 1.5625vw
+                    element.style.setProperty('font-size', '24px'); // 1.5625vw = 24px
                     element.style.setProperty('gap', '0'); // 0
-                    element.style.setProperty('margin-top', '14px'); // 0.91015625vw
+                    element.style.setProperty('margin-top', '14px'); // 0.91015625vw = 14px
                 }
             })
         }
         sizeVector=JSON.parse('{{sizeVector}}');
         editVectorSize(sizeVector);
-        
+       
+        //---------scroll horizontly in result area if needed ------------------------------------------------------------
+        const container = document.querySelector(".for-scroll");
+        container.addEventListener("wheel", function (e) {
+            if (e.deltaY > 0) {
+                container.scrollLeft += 100;
+                e.preventDefault();
+            }
+            else {
+                container.scrollLeft -= 100;
+                e.preventDefault();
+            }
+        });
+
     </script>
 {% endblock %}
 

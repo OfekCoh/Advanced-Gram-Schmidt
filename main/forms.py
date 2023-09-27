@@ -46,7 +46,7 @@ class HomeForm(forms.Form):
                                                             'placeholder': '(Optional)', 
                                                             'readonly': True}))
     
-    base = forms.CharField( max_length=50,
+    base = forms.CharField( max_length=100,
                             label='Enter your base',
                             widget=forms.Textarea(attrs={'id':'base-input', 'inputmode': 'decimal',
                                                           'rows': 5, 
